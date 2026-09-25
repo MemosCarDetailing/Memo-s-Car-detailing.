@@ -37,7 +37,6 @@ a {
     --border: rgba(255,255,255,.09);
 }
 
-
 /* =========================
    NAVBAR
 ========================= */
@@ -46,7 +45,6 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 88px;
 
@@ -56,7 +54,7 @@ nav {
 
     padding: 0 5%;
 
-    background: rgba(2,4,6,.95);
+    background: rgba(2,4,6,.96);
     backdrop-filter: blur(18px);
 
     border-bottom: 1px solid rgba(0,140,255,.15);
@@ -71,29 +69,24 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    flex-shrink: 0;
 }
 
 .nav-logo {
-    width: 74px;
-    height: 74px;
+    width: 72px;
+    height: 72px;
 
     object-fit: contain;
 
     display: block;
 
-    filter:
-        drop-shadow(0 0 7px rgba(0,140,255,.3));
+    filter: drop-shadow(0 0 8px rgba(0,140,255,.4));
 
     transition: .25s;
 }
 
 .nav-logo:hover {
-    filter:
-        drop-shadow(0 0 13px rgba(0,140,255,.65));
-
-    transform: scale(1.04);
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0,140,255,.7));
 }
 
 .nav-links {
@@ -124,8 +117,6 @@ nav {
 
     border-radius: 5px;
 
-    color: white !important;
-
     background: rgba(0,140,255,.08);
 
     transition: .25s;
@@ -134,8 +125,7 @@ nav {
 .nav-button:hover {
     background: var(--blue);
 
-    box-shadow:
-        0 0 25px rgba(0,140,255,.35);
+    box-shadow: 0 0 25px rgba(0,140,255,.35);
 }
 
 
@@ -169,29 +159,6 @@ nav {
     overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 70%;
-    height: 120%;
-
-    right: -25%;
-    top: -10%;
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 35%,
-            rgba(0,140,255,.025) 35%,
-            rgba(0,140,255,.025) 65%,
-            transparent 65%
-        );
-
-    transform: skewX(-12deg);
-}
-
 .container {
     width: min(1200px, 90%);
     margin: auto;
@@ -206,7 +173,6 @@ nav {
 
 .hero-logo {
     width: 205px;
-    height: auto;
 
     margin-bottom: 25px;
 
@@ -251,8 +217,7 @@ nav {
 .hero h1 span {
     color: var(--blue);
 
-    text-shadow:
-        0 0 30px rgba(0,140,255,.4);
+    text-shadow: 0 0 30px rgba(0,140,255,.4);
 }
 
 .hero-subtitle {
@@ -298,21 +263,17 @@ nav {
 .btn-primary {
     background: var(--blue);
 
-    box-shadow:
-        0 8px 30px rgba(0,140,255,.22);
+    box-shadow: 0 8px 30px rgba(0,140,255,.22);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
 
-    box-shadow:
-        0 12px 40px rgba(0,140,255,.45);
+    box-shadow: 0 12px 40px rgba(0,140,255,.45);
 }
 
 .btn-outline {
     border: 1px solid #34404c;
-
-    color: white;
 
     background: rgba(255,255,255,.02);
 }
@@ -339,8 +300,7 @@ nav {
 .stats-box {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     background:
         linear-gradient(
@@ -351,8 +311,7 @@ nav {
 
     border: 1px solid var(--border);
 
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
 
     border-radius: 8px;
 
@@ -459,8 +418,7 @@ nav {
 .pricing-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 25px;
 
@@ -493,11 +451,9 @@ nav {
 .price-card:hover {
     transform: translateY(-8px);
 
-    border-color:
-        rgba(0,140,255,.55);
+    border-color: rgba(0,140,255,.55);
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.45);
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
 }
 
 .package-number {
@@ -580,6 +536,98 @@ nav {
 
 
 /* =========================
+   ADD-ONS
+========================= */
+
+.addons {
+    max-width: 1050px;
+
+    margin: 55px auto 0;
+}
+
+.addons-heading {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.addons-heading h3 {
+    font-size: 25px;
+
+    font-weight: 950;
+
+    text-transform: uppercase;
+}
+
+.addons-heading p {
+    color: #737d86;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+}
+
+.addons-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.addon-card {
+    padding: 27px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,27,34,.97),
+            rgba(7,11,15,.97)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.addon-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(0,140,255,.55);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.4);
+}
+
+.addon-icon {
+    color: var(--blue);
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.addon-card h4 {
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 9px;
+}
+
+.addon-price {
+    color: var(--blue);
+
+    font-size: 23px;
+
+    font-weight: 950;
+}
+
+
+/* =========================
    WHY US
 ========================= */
 
@@ -590,8 +638,7 @@ nav {
 .why-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
 }
@@ -714,8 +761,7 @@ nav {
 .contact-grid {
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 50px;
 
@@ -774,6 +820,11 @@ nav {
     line-height: 1.6;
 
     margin-bottom: 25px;
+}
+
+.contact-card .btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 
@@ -852,6 +903,10 @@ footer span {
         grid-template-columns: 1fr;
     }
 
+    .addons-grid {
+        grid-template-columns: 1fr;
+    }
+
     .stats-box {
         grid-template-columns: 1fr;
     }
@@ -890,13 +945,11 @@ footer span {
 <nav>
 
     <a href="#home" class="nav-brand">
-
         <img
             src="logo.png"
             class="nav-logo"
             alt="Memo's Car Detailing Logo"
         >
-
     </a>
 
     <div class="nav-links">
@@ -945,11 +998,9 @@ footer span {
             </h1>
 
             <p class="hero-subtitle">
-
                 Premium interior and exterior detailing
                 designed to bring back the shine,
                 cleanliness and appearance your vehicle deserves.
-
             </p>
 
             <div class="hero-buttons">
@@ -994,7 +1045,6 @@ footer span {
 
             </div>
 
-
             <div class="stat">
 
                 <div class="stat-number">
@@ -1006,7 +1056,6 @@ footer span {
                 </div>
 
             </div>
-
 
             <div class="stat">
 
@@ -1058,9 +1107,7 @@ footer span {
         <div class="pricing-grid">
 
 
-            <!-- =========================
-                 PACKAGE 1
-            ========================= -->
+            <!-- WASH & VACUUM -->
 
             <div class="price-card">
 
@@ -1124,9 +1171,7 @@ footer span {
 
 
 
-            <!-- =========================
-                 PACKAGE 2
-            ========================= -->
+            <!-- FULL DETAIL -->
 
             <div class="price-card">
 
@@ -1196,6 +1241,84 @@ footer span {
 
             </div>
 
+        </div>
+
+
+
+        <!-- =========================
+             ADD-ONS
+        ========================= -->
+
+        <div class="addons">
+
+            <div class="addons-heading">
+
+                <h3>
+                    ADD-ONS
+                </h3>
+
+                <p>
+                    Upgrade your detail with these additional services.
+                </p>
+
+            </div>
+
+
+            <div class="addons-grid">
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        ✦
+                    </div>
+
+                    <h4>
+                        Pet Hair
+                    </h4>
+
+                    <div class="addon-price">
+                        +$50
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        ✦
+                    </div>
+
+                    <h4>
+                        Water Spots Removal
+                    </h4>
+
+                    <div class="addon-price">
+                        +$60–$120
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        ✦
+                    </div>
+
+                    <h4>
+                        Carpet Extractor
+                    </h4>
+
+                    <div class="addon-price">
+                        +$60–$150
+                    </div>
+
+                </div>
+
+
+            </div>
 
         </div>
 
@@ -1362,8 +1485,6 @@ footer span {
 
                 <div class="contact-details">
 
-                    <!-- CHANGE THESE -->
-
                     <div class="contact-item">
                         <strong>PHONE</strong>
                         (571) 616-1706
@@ -1371,7 +1492,7 @@ footer span {
 
                     <div class="contact-item">
                         <strong>EMAIL</strong>
-                        memosdetailing@email.com
+                        memoscardetailing@email.com
                     </div>
 
                     <div class="contact-item">
@@ -1403,7 +1524,7 @@ footer span {
                 </a>
 
                 <a
-                    href="mailto:memosdetailing@email.com"
+                    href="mailto:memoscardetailing@email.com"
                     class="btn btn-outline"
                 >
                     SEND EMAIL
