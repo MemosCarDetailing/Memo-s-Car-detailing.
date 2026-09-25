@@ -8,10 +8,6 @@
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -38,7 +34,6 @@ a {
     --blue: #008cff;
     --blue-light: #20a5ff;
     --dark: #030507;
-    --gray: #9ca5ae;
     --border: rgba(255,255,255,.09);
 }
 
@@ -69,8 +64,6 @@ nav {
     z-index: 9999;
 }
 
-/* Logo container */
-
 .nav-brand {
     width: 78px;
     height: 78px;
@@ -81,8 +74,6 @@ nav {
 
     flex-shrink: 0;
 }
-
-/* Actual logo */
 
 .nav-logo {
     width: 74px;
@@ -104,9 +95,6 @@ nav {
 
     transform: scale(1.04);
 }
-
-
-/* Navigation links */
 
 .nav-links {
     display: flex;
@@ -456,7 +444,7 @@ nav {
 
 
 /* =========================
-   PRICING
+   PACKAGES
 ========================= */
 
 .pricing {
@@ -472,21 +460,25 @@ nav {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(2, 1fr);
 
-    gap: 20px;
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: auto;
 }
 
 .price-card {
     position: relative;
 
-    padding: 34px 30px;
+    padding: 38px 35px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20,27,34,.95),
-            rgba(7,11,15,.95)
+            rgba(20,27,34,.97),
+            rgba(7,11,15,.97)
         );
 
     border: 1px solid var(--border);
@@ -508,30 +500,6 @@ nav {
         0 20px 50px rgba(0,0,0,.45);
 }
 
-.price-card.featured {
-    border-color: var(--blue);
-
-    box-shadow:
-        0 0 40px rgba(0,140,255,.08);
-}
-
-.featured-label {
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    padding: 8px 14px;
-
-    background: var(--blue);
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
 .package-number {
     color: #46515d;
 
@@ -541,11 +509,11 @@ nav {
 
     letter-spacing: 2px;
 
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .price-card h3 {
-    font-size: 24px;
+    font-size: 27px;
 
     margin-bottom: 8px;
 }
@@ -553,28 +521,54 @@ nav {
 .price {
     color: var(--blue);
 
-    font-size: 38px;
+    font-size: 34px;
 
     font-weight: 950;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
-.price-card ul {
+.package-section {
+    margin-top: 28px;
+}
+
+.package-section:first-of-type {
+    margin-top: 0;
+}
+
+.package-section-title {
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    text-transform: uppercase;
+}
+
+.package-section-title span {
+    color: var(--blue);
+}
+
+.package-list {
     list-style: none;
 }
 
-.price-card li {
+.package-list li {
     color: #aeb5bc;
 
     font-size: 14px;
 
-    padding: 11px 0;
+    padding: 8px 0;
 
-    border-bottom: 1px solid rgba(255,255,255,.05);
+    border-bottom: 1px solid rgba(255,255,255,.04);
+
+    line-height: 1.45;
 }
 
-.price-card li::before {
+.package-list li::before {
     content: "✓";
 
     color: var(--blue);
@@ -818,7 +812,6 @@ footer span {
 
     nav {
         height: 78px;
-
         padding: 0 20px;
     }
 
@@ -865,7 +858,6 @@ footer span {
 
     .stat {
         border-right: none;
-
         border-bottom: 1px solid var(--border);
     }
 
@@ -879,9 +871,7 @@ footer span {
 
     footer {
         flex-direction: column;
-
         gap: 10px;
-
         text-align: center;
     }
 }
@@ -909,29 +899,17 @@ footer span {
 
     </a>
 
-
     <div class="nav-links">
 
-        <a href="#home">
-            HOME
-        </a>
+        <a href="#home">HOME</a>
 
-        <a href="#pricing">
-            PACKAGES
-        </a>
+        <a href="#pricing">PACKAGES</a>
 
-        <a href="#why">
-            WHY US
-        </a>
+        <a href="#why">WHY US</a>
 
-        <a href="#contact">
-            CONTACT
-        </a>
+        <a href="#contact">CONTACT</a>
 
-        <a
-            href="#contact"
-            class="nav-button"
-        >
+        <a href="#contact" class="nav-button">
             BOOK NOW
         </a>
 
@@ -976,17 +954,11 @@ footer span {
 
             <div class="hero-buttons">
 
-                <a
-                    href="#pricing"
-                    class="btn btn-primary"
-                >
+                <a href="#pricing" class="btn btn-primary">
                     VIEW PACKAGES
                 </a>
 
-                <a
-                    href="#contact"
-                    class="btn btn-outline"
-                >
+                <a href="#contact" class="btn btn-outline">
                     GET A QUOTE
                 </a>
 
@@ -1013,7 +985,7 @@ footer span {
             <div class="stat">
 
                 <div class="stat-number">
-                    $75+
+                    $100+
                 </div>
 
                 <div class="stat-label">
@@ -1057,13 +1029,10 @@ footer span {
 
 
 <!-- =========================
-     PRICING
+     PACKAGES
 ========================= -->
 
-<section
-    class="section pricing"
-    id="pricing"
->
+<section class="section pricing" id="pricing">
 
     <div class="container">
 
@@ -1080,7 +1049,7 @@ footer span {
 
             <p class="section-description">
                 Professional detailing packages designed
-                for different levels of vehicle care.
+                to keep your vehicle clean, protected and looking its best.
             </p>
 
         </div>
@@ -1089,7 +1058,9 @@ footer span {
         <div class="pricing-grid">
 
 
-            <!-- FULL INTERIOR -->
+            <!-- =========================
+                 PACKAGE 1
+            ========================= -->
 
             <div class="price-card">
 
@@ -1098,116 +1069,133 @@ footer span {
                 </div>
 
                 <h3>
-                    Full Interior Detail
+                    Wash & Vacuum
                 </h3>
 
                 <div class="price">
-                    $75
+                    $100–$150
                 </div>
 
-                <ul>
 
-                    <li>
-                        Floor Mat Extraction
-                    </li>
+                <div class="package-section">
 
-                    <li>
-                        Vacuuming
-                    </li>
+                    <div class="package-section-title">
+                        Basic <span>Exterior</span>
+                    </div>
 
-                    <li>
-                        Door Jams Cleaned
-                    </li>
+                    <ul class="package-list">
 
-                    <li>
-                        Leather Protection
-                    </li>
+                        <li>Foam Wash</li>
 
-                    <li>
-                        Plastic Trim Protection
-                    </li>
+                        <li>Hand Wash</li>
 
-                </ul>
+                        <li>Wheels</li>
+
+                        <li>Tire Shine</li>
+
+                        <li>Windows</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="package-section">
+
+                    <div class="package-section-title">
+                        Basic <span>Interior</span>
+                    </div>
+
+                    <ul class="package-list">
+
+                        <li>Vacuum</li>
+
+                        <li>Wipe Down Plastics</li>
+
+                        <li>Wash Rubber Floor Mats</li>
+
+                        <li>Door Jambs</li>
+
+                    </ul>
+
+                </div>
 
             </div>
 
 
-            <!-- ADVANCED -->
 
-            <div class="price-card featured">
+            <!-- =========================
+                 PACKAGE 2
+            ========================= -->
 
-                <div class="featured-label">
-                    MOST POPULAR
-                </div>
+            <div class="price-card">
 
                 <div class="package-number">
                     PACKAGE 02
                 </div>
 
                 <h3>
-                    Advanced Detail
+                    Full Detail
                 </h3>
 
                 <div class="price">
-                    $120
+                    $200–$350
                 </div>
 
-                <ul>
 
-                    <li>
-                        Full Interior & Basic Exterior
-                    </li>
+                <div class="package-section">
 
-                    <li>
-                        Contact Wash
-                    </li>
+                    <div class="package-section-title">
+                        Full <span>Exterior</span>
+                    </div>
 
-                    <li>
-                        Headlight Restore
-                    </li>
+                    <ul class="package-list">
 
-                </ul>
+                        <li>Hand Wash</li>
+
+                        <li>Foam Wash</li>
+
+                        <li>Vehicle Decontamination</li>
+
+                        <li>Ceramic Sealant (6–8 Months)</li>
+
+                        <li>Wheels</li>
+
+                        <li>Tire Shine</li>
+
+                        <li>Protect Faded Trim</li>
+
+                        <li>Windows</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="package-section">
+
+                    <div class="package-section-title">
+                        Full <span>Interior</span>
+                    </div>
+
+                    <ul class="package-list">
+
+                        <li>Vacuum</li>
+
+                        <li>Scrub All Surfaces</li>
+
+                        <li>Deep Clean</li>
+
+                        <li>Plastic Protection</li>
+
+                        <li>Door Jambs</li>
+
+                    </ul>
+
+                </div>
 
             </div>
 
-
-            <!-- PRO -->
-
-            <div class="price-card">
-
-                <div class="package-number">
-                    PACKAGE 03
-                </div>
-
-                <h3>
-                    Pro Detail
-                </h3>
-
-                <div class="price">
-                    $200
-                </div>
-
-                <ul>
-
-                    <li>
-                        Full Interior & Exterior
-                    </li>
-
-                    <li>
-                        Ceramic Coat — 6 & 8 Months
-                    </li>
-
-                    <li>
-                        Vehicle Decontamination
-                    </li>
-
-                    <li>
-                        Carpet & Seat Extraction
-                    </li>
-
-                </ul>
-
-            </div>
 
         </div>
 
@@ -1221,10 +1209,7 @@ footer span {
      WHY US
 ========================= -->
 
-<section
-    class="section why"
-    id="why"
->
+<section class="section why" id="why">
 
     <div class="container">
 
@@ -1331,10 +1316,7 @@ footer span {
                 Car Detailing today.
             </p>
 
-            <a
-                href="#contact"
-                class="btn btn-primary"
-            >
+            <a href="#contact" class="btn btn-primary">
                 BOOK YOUR DETAIL
             </a>
 
@@ -1350,10 +1332,7 @@ footer span {
      CONTACT
 ========================= -->
 
-<section
-    class="section contact"
-    id="contact"
->
+<section class="section contact" id="contact">
 
     <div class="container">
 
