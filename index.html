@@ -1,60 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Memo's Car Detailing</title>
-    <style>
-        body {
-            margin: 0;
-            background: #050505;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            padding: 40px 20px;
-        }
+<title>Memo's Car Detailing</title>
 
-        h1 {
-            font-size: 55px;
-            color: #008cff;
-            margin-bottom: 10px;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        p {
-            font-size: 20px;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #030303;
+    color: white;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background: #008cff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-    </style>
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #12304a;
+    z-index: 1000;
+}
+
+.nav-logo {
+    width: 90px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0099ff;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 20px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, #073b68 0%, #030303 55%),
+        #030303;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-logo {
+    width: 270px;
+    max-width: 80%;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 25px rgba(0,153,255,0.7));
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 25px rgba(0,153,255,0.7);
+}
+
+.hero h1 span {
+    color: #0099ff;
+}
+
+.hero h2 {
+    color: #0099ff;
+    letter-spacing: 7px;
+    margin-top: 5px;
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+.hero p {
+    color: #bdbdbd;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+/* BUTTONS */
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #0099ff;
+    color: white;
+    box-shadow: 0 0 25px rgba(0,153,255,0.5);
+}
+
+.primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0,153,255,0.9);
+}
+
+.secondary {
+    border: 2px solid #0099ff;
+    color: white;
+}
+
+.secondary:hover {
+    background: #0099ff;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #0099ff;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 50px;
+}
+
+/* SERVICES */
+
+.services {
+    background: #070707;
+}
+
+.cards {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 35px 25px;
+    background: linear-gradient(145deg, #101010, #050505);
+    border: 1px solid #1c1c1c;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #0099ff;
+    box-shadow: 0 10px 35px rgba(0,153,255,0.18);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.6;
+}
+
+/* ABOUT */
+
+.about {
+    text-align: center;
+    background:
+        linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.95)),
+        #03192b;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.about p {
+    color: #aaa;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact {
+    background: linear-gradient(180deg, #050505, #031b2d);
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 50px 25px;
+    background: rgba(10,10,10,0.9);
+    border: 1px solid #1b3d57;
+    border-radius: 20px;
+    box-shadow: 0 0 45px rgba(0,153,255,0.12);
+}
+
+.contact-box p {
+    color: #aaa;
+    font-size: 18px;
+    margin: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #000;
+    color: #666;
+}
+
+footer span {
+    color: #0099ff;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-logo {
+        width: 220px;
+    }
+
+    section {
+        padding: 75px 5%;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>MEMO'S</h1>
-    <h2>CAR DETAILING</h2>
+<!-- NAVIGATION -->
 
-    <p>Professional car detailing that makes your vehicle shine.</p>
+<nav>
 
-    <a class="button" href="#services">View Services</a>
-</header>
+    <img src="logo.png" class="nav-logo" alt="Memo's Car Detailing">
 
-<section id="services">
-    <h2>Our Services</h2>
-    <p>Interior Detailing</p>
-    <p>Exterior Detailing</p>
-    <p>Full Detail</p>
+    <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#services">SERVICES</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img src="logo.png"
+             class="hero-logo"
+             alt="Memo's Car Detailing Logo">
+
+        <h1>MEMO<span>'S</span></h1>
+
+        <h2>CAR DETAILING</h2>
+
+        <p>
+            Professional car detailing that brings
+            your vehicle back to life.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#services" class="btn primary">
+                VIEW SERVICES
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                GET A QUOTE
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        OUR <span>SERVICES</span>
+    </h2>
+
+    <p class="subtitle">
+        Professional care for your vehicle.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🚗</div>
+
+            <h3>Exterior Detail</h3>
+
+            <p>
+                Hand wash, wheels, tires, windows
+                and a clean glossy finish.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">✨</div>
+
+            <h3>Interior Detail</h3>
+
+            <p>
+                Deep cleaning for carpets, seats,
+                dashboard and interior surfaces.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💎</div>
+
+            <h3>Full Detail</h3>
+
+            <p>
+                Complete interior and exterior
+                detailing for the ultimate clean.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧽</div>
+
+            <h3>Paint Enhancement</h3>
+
+            <p>
+                Restore gloss and improve the
+                appearance of your vehicle's paint.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <h2 class="section-title">
+            ABOUT <span>MEMO'S</span>
+        </h2>
+
+        <p>
+            At Memo's Car Detailing, we take pride in
+            making every vehicle look its best.
+            From a simple clean to a full detail,
+            we focus on the details that make your
+            vehicle stand out.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2 class="section-title">
+            READY TO <span>SHINE?</span>
+        </h2>
+
+        <p>
+            Contact Memo's Car Detailing today
+            to schedule your next detail.
+        </p>
+
+        <!-- CHANGE THESE TO YOUR REAL INFO -->
+
+        <p>📞 (571) 616-1755</p>
+
+        <p>📧 memosdetailing@email.com</p>
+
+        <a href="tel:5555555555" class="btn primary">
+            CALL NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026
+    <span>Memo's Car Detailing</span>
+    — All Rights Reserved
+
+</footer>
 
 </body>
 </html>
